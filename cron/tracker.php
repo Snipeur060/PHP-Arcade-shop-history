@@ -4,7 +4,7 @@
  * */
 
 //init database connection
-$db = new Mysqli('localhost','dbusername','password','dbname');
+$db = new Mysqli('localhost','usersnipeurarcadetracker','*X0b549ar','snipeur060db_arcade_tracker');
 
 //connect to the db
 if ($db->connect_error) {
@@ -42,7 +42,14 @@ foreach ($resultarray as $key => $value) {
     $productname = $db->real_escape_string($productname);
     $hours = $value['hours']; // correspond au prix / nb ticket
     $imageURL = $value['imageURL'];
+
     $stock = $value['stock'];
+
+    if($stock === NULL){
+        $stock = 9999;
+    }
+
+
 
     // on ajoute une verification pour savoir s'il y a une difference avec au moins une des valeurs
     // si oui, on ajoute dans la base de données
