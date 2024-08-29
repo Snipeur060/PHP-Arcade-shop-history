@@ -3,7 +3,7 @@
  * */
 
 //init database connection
-$db = new Mysqli('localhost','usersnipeurarcadetracker','*X0b549ar','snipeur060db_arcade_tracker');
+$db = new Mysqli('localhost','userdb','passs','dbname');
 
 //connect to the db
 if ($db->connect_error) {
