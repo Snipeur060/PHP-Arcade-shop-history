@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation des API</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .api-endpoint {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .api-endpoint code {
+            background-color: #333;
+            color: #ffffff;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .api-endpoint pre {
+            background-color: #333;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .api-endpoint .description {
+            margin-top: 10px;
+        }
+
+        .api-endpoint .parameters,
+        .api-endpoint .response {
+            margin-top: 10px;
+        }
+
+        .api-endpoint .parameters ul,
+        .api-endpoint .response ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .api-endpoint .parameters li,
+        .api-endpoint .response li {
+            margin-bottom: 5px;
+        }
+
+        .api-endpoint .example {
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        .btn-refresh {
+            background-color: #007bff;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Documentation des API</h1>
+
+    <!-- Documentation pour search.php -->
+    <div class="api-endpoint">
+        <h2>Endpoint: /api/search</h2>
+        <p><strong>Méthode HTTP:</strong> GET</p>
+        <p class="description">Cet endpoint permet de rechercher des produits en fonction de critères de recherche.</p>
+        <h3>Paramètres</h3>
+        <div class="parameters">
+            <ul>
+                <li><strong>search</strong>: (Requis) La chaîne de recherche pour filtrer les produits.</li>
+            </ul>
+        </div>
+        <h3>Réponse</h3>
+        <div class="response">
+            <pre><code>[
+  {
+    "id": "166",
+    "productname": "Invertocat Backpack",
+    "hours": "85",
+    "imageURL": "https://cloud-2wpezbt6a-hack-club-bot.vercel.app/1miir.png",
+    "date": "2024-08-29 22:59:14",
+    "stock": "0"
+  },
+  {
+    "id": "177",
+    "productname": "Digital Ocean credits",
+    "hours": "4",
+    "imageURL": "https://cloud-itv94wqoe-hack-club-bot.vercel.app/1screenshot_2024-08-26_at_1.23.29___pm.png",
+    "date": "2024-08-29 22:59:14",
+    "stock": "9999"
+  },
+  {
+    "id": "212",
+    "productname": "Octocat",
+    "hours": "15",
+    "imageURL": "https://cloud-n716uf1pe-hack-club-bot.vercel.app/0gh_0008_z_dd7b_copy.png",
+    "date": "2024-08-29 23:13:07",
+    "stock": "0"
+  }
+]</code></pre>
+        </div>
+        <h3>Exemple de requête</h3>
+        <div class="example">
+            <code>https://arcade-tracker.snipeur060.fr/api/search?search=oc</code>
+        </div>
+    </div>
+
+    <!-- Documentation pour productinfo.php -->
+    <div class="api-endpoint">
+        <h2>Endpoint: /api/productinfo</h2>
+        <p><strong>Méthode HTTP:</strong> GET</p>
+        <p class="description">Cet endpoint retourne les détails d'un produit spécifique en utilisant son nom.</p>
+        <h3>Paramètres</h3>
+        <div class="parameters">
+            <ul>
+                <li><strong>productname</strong>: (Requis) Le nom du produit dont vous souhaitez obtenir les détails.</li>
+            </ul>
+        </div>
+        <h3>Réponse</h3>
+        <div class="response">
+            <pre><code>[
+  {
+    "id": "212",
+    "productname": "Octocat",
+    "hours": "15",
+    "imageURL": "https://cloud-n716uf1pe-hack-club-bot.vercel.app/0gh_0008_z_dd7b_copy.png",
+    "date": "2024-08-29 23:13:07",
+    "stock": "0"
+  }
+]</code></pre>
+        </div>
+        <h3>Exemple de requête</h3>
+        <div class="example">
+            <code>https://arcade-tracker.snipeur060.fr/api/productinfo?productname=Octocat</code>
+        </div>
+    </div>
+
+    <!-- Documentation pour productchange.php -->
+    <div class="api-endpoint">
+        <h2>Endpoint: /api/productchange</h2>
+        <p><strong>Méthode HTTP:</strong> GET</p>
+        <p class="description">Cet endpoint retourne l'historique des changements pour un produit spécifique.</p>
+        <h3>Paramètres</h3>
+        <div class="parameters">
+            <ul>
+                <li><strong>productname</strong>: (Requis) Le nom du produit dont vous souhaitez obtenir l'historique des changements.</li>
+            </ul>
+        </div>
+        <h3>Réponse</h3>
+        <div class="response">
+            <pre><code>[
+  {
+    "id": "213",
+    "productname": "Octocat",
+    "hours": "10",
+    "imageURL": "https://cloud-n716uf1pe-hack-club-bot.vercel.app/0gh_0008_z_dd7b_copy.png",
+    "date": "2024-08-29 23:13:07",
+    "stock": "0"
+  },
+  {
+    "id": "212",
+    "productname": "Octocat",
+    "hours": "15",
+    "imageURL": "https://cloud-n716uf1pe-hack-club-bot.vercel.app/0gh_0008_z_dd7b_copy.png",
+    "date": "2024-08-29 23:13:07",
+    "stock": "0"
+  }
+]</code></pre>
+        </div>
+        <h3>Exemple de requête</h3>
+        <div class="example">
+            <code>https://arcade-tracker.snipeur060.fr/api/productchange?productname=Octocat</code>
+        </div>
+    </div>
+
+    <!-- Documentation pour search.php -->
+
+</div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
