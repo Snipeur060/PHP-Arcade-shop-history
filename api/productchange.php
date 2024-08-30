@@ -5,15 +5,7 @@
  *
  * */
 
-//init database connection
-$db = new Mysqli('localhost','userdb','pass','namedb');
-
-//connect to the db
-if ($db->connect_error) {
-    header('Content-Type: application/json');
-    echo json_encode(array('error' => 'DB excpetion Error'));
-    die();
-}
+require_once 'config.php';
 
 // le parametre s'appelle productname
 $productname = $_GET['productname'];
