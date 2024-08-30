@@ -5,15 +5,7 @@
  *
  * */
 
-//init database connection
-$db = new Mysqli('localhost','userdb','pass','dbname');
-
-//connect to the db
-if ($db->connect_error) {
-    header('Content-Type: application/json');
-    echo json_encode(array('error' => 'DB excpetion Error'));
-    die();
-}
+require_once 'config.php';
 
 $productid = $_GET['id'];
 // on met un petit coup de mysqlescapestring pour eviter les injections sql
