@@ -109,7 +109,24 @@ if (!empty($products)) {
             height: auto;
         }
 
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
 
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #a8bbbf;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(144, 164, 169, 0.51);
+        }
     </style>
 </head>
 <body>
