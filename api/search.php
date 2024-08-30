@@ -2,15 +2,8 @@
 /* Le but est d'utiliser un string pour faire une recherche dans la base de données
  * */
 
-//init database connection
-$db = new Mysqli('localhost','userdb','passs','dbname');
+require_once 'config.php';
 
-//connect to the db
-if ($db->connect_error) {
-    header('Content-Type: application/json');
-    echo json_encode(array('error' => 'DB excpetion Error'));
-    die();
-}
 
 // le parametre s'appelle search
 $search = $_GET['search'];
