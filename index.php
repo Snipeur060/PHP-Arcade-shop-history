@@ -56,18 +56,23 @@
         .table img {
             max-width: 100px; /* Ajuster la taille de l'image */
         }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Recherche de Produits</h1>
+    <h1 class="text-center mb-4">Arcade Shop Tracker</h1>
     <div class="input-group mb-3">
         <input type="text" id="search" name="search" class="form-control" placeholder="Rechercher un produit..." autocomplete="off">
         <div class="input-group-append">
             <button class="btn btn-primary" type="button" id="search-btn">Rechercher</button>
         </div>
     </div>
+    <div id="lastproduct">
+        <a href="/lastprod" class="btn btn-info">Dernier Produit</a>
+        <a href="/doc" class="btn btn-info">Documentation API</a>
+    </div><br>
     <div id="result">
         <!-- Les résultats de la recherche seront affichés ici -->
     </div>
