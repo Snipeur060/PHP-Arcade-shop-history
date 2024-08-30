@@ -77,12 +77,26 @@
             background-color: #007bff;
             border-color: #0056b3;
         }
+        .btn-refresh,
+        .btn-back {
+            background-color: #555;
+            border-color: #777;
+            color: #ffffff;
+            margin: 20px 0;
+        }
+
+        .btn-back {
+            background-color: #007bff; /* Couleur bleue pour le bouton retour */
+            border-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1 class="text-center mb-4">Documentation des API</h1>
-
+    <div>
+        <a href="/" class="btn btn-back">Retour</a>
+    </div>
     <!-- Documentation pour search.php -->
     <div class="api-endpoint">
         <h2>Endpoint: /api/search</h2>
@@ -197,8 +211,55 @@
         </div>
     </div>
 
-    <!-- Documentation pour search.php -->
+    <!-- Documentation pour lastchange.php -->
+    <div class="api-endpoint">
+        <h2>Endpoint: /api/lastchange</h2>
+        <p><strong>Méthode HTTP:</strong> GET</p>
+        <p class="description">Cet endpoint retourne l'historique des changements de tous les produits dans une limite de 20</p>
+        <h3>Paramètres</h3>
+        <div class="parameters">
+            <ul>
+                <li><strong>Aucun</strong></li>
+            </ul>
+        </div>
+        <h3>Réponse</h3>
+        <div class="response">
+            <pre><code>[{"id":"264","productname":"Framework","hours":"175",
+                    "imageURL":"https:\/\/cloud-g0bjmr0sz-hack-club-bot.vercel.app\/013in.png",
+                    "date":"2024-08-30 10:58:12","stock":"0"},
+{...},
+...]</code></pre>
+        </div>
+        <h3>Exemple de requête</h3>
+        <div class="example">
+            <code>https://arcade-tracker.snipeur060.fr/api/lastchange</code>
+        </div>
+    </div>
 
+    <!-- Documentation de productid.php -->
+    <div class="api-endpoint">
+        <h2>Endpoint: /api/productid</h2>
+        <p><strong>Méthode HTTP:</strong> GET</p>
+        <p class="description">Cette endpoint permet d'avoir des infos sur un produit ayant une id special</p>
+        <h3>Paramètres</h3>
+        <div class="parameters">
+            <ul>
+                <li><strong>id :</strong>(Requis) L'id est le numéro du produit (c'est l'identifiant unique de l'entrée le produit figé à une date donné)</li>
+            </ul>
+        </div>
+        <h3>Réponse</h3>
+        <div class="response">
+            <pre><code>[{"id":"159",
+                    "productname":"USB-C Charger",
+                    "hours":"6",
+                    "imageURL":"https:\/\/cloud-lit9nkas9-hack-club-bot.vercel.app\/051t9lfjeuml._ac_sl1500_.png",
+                    "date":"2024-08-29 22:59:14","stock":"15"}]</code></pre>
+        </div>
+        <h3>Exemple de requête</h3>
+        <div class="example">
+            <code>https://arcade-tracker.snipeur060.fr/api/productid?id=159</code>
+        </div>
+    </div>
 </div>
 <!-- Bootstrap JS and dependencies -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
