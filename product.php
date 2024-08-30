@@ -62,18 +62,7 @@ if (!empty($products)) {
             border-color: #444;
         }
 
-        .btn-refresh,
-        .btn-back {
-            background-color: #555;
-            border-color: #777;
-            color: #ffffff;
-            margin: 20px 0;
-        }
 
-        .btn-back {
-            background-color: #007bff; /* Couleur bleue pour le bouton retour */
-            border-color: #0056b3;
-        }
 
         .container {
             margin-top: 50px;
@@ -119,12 +108,14 @@ if (!empty($products)) {
             max-width: 80px;
             height: auto;
         }
+
+
     </style>
 </head>
 <body>
 <div class="container">
     <!-- Bouton de retour -->
-    <a href="javascript:history.back()" class="btn btn-back">Retour</a>
+    <a href="/" class="btn btn-info">Retour</a><br>
 
     <h1 class="text-center mb-4">Détails des Produits</h1>
     <!-- Message d'erreur -->
